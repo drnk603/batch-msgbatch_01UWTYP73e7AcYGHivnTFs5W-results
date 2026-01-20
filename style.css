@@ -1135,7 +1135,7 @@ textarea.form-control {
 }
 
 .g-4 {
-  gap: var(--space-lg);
+
 }
 
 .row.g-4 {
@@ -1630,4 +1630,10 @@ hr {
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
+}
+
+@media (max-width: 767px) {
+  .g-4 {
+    gap: var(--space-lg);
+  }
 }

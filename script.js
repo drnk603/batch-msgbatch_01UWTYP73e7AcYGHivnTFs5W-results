@@ -103,14 +103,14 @@
   };
 
   const initActiveMenu = () => {
-    const path = window.location.pathname.replace(//$/, '') || '/';
+    const path = window.location.pathname.replace(/\/$/, '') || '/';
     const links = document.querySelectorAll('.nav-link');
 
     links.forEach(link => {
       const href = link.getAttribute('href');
       if (!href) return;
 
-      const linkPath = href.split('#')[0].replace(//$/, '') || '/';
+      const linkPath = href.split('#')[0].replace(/\/$/, '') || '/';
 
       if (linkPath === path || (path === '/' && (href === '/' || href === '/index.html'))) {
         link.classList.add('active');
@@ -124,9 +124,9 @@
     if (!form) return;
 
     const patterns = {
-      email: /^[^s@]+@[^s@]+.[^s@]+$/,
-      phone: /^[ds+-()]{10,20}$/,
-      name: /^[a-zA-ZÀ-ÿs-']{2,50}$/
+      email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+      phone: /^[\d\s+\-()]{10,20}$/,
+      name: /^[a-zA-ZÀ-ÿ\s-']{2,50}$/
     };
 
     const validateField = (field) => {
